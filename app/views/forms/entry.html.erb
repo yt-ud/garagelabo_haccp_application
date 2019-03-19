@@ -23,7 +23,7 @@
         <%= form_with url: posts_path do |f| %>
             <div>
                 <!-- 希望日程 -->
-                <h2 class="item">ご希望の日程をお選びください。</h2>
+                <h2 class="item">ご希望の日程をお選びください<span class="red">（入力必須）</span></h2>
                 <div class="form-box">
                     <div class="form-box-title">
                         <span>イベント日程</span>
@@ -43,7 +43,7 @@
             </div>
             <div>
                 <!-- 参加者情報 -->
-                <h2 class="item">ご参加いただく方の情報をご入力ください。</h2>
+                <h2 class="item">ご参加いただく方の情報をご入力ください<span class="red">（入力必須）</span></h2>
                 <div class="form-box">
                     <div class="form-box-title">
                         <span>お名前</span>
@@ -126,58 +126,61 @@
                 </div>
                 <div class="form-box">
                     <div class="form-box-title">
-                        <span>HACCP導入に向けて不安に思っている点（複数回答可）</span>
+                        <span>HACCP導入に向けて不安に思っている点<br>（複数回答可）</span>
                     </div>
                     <div class="form-box-item">
                         <div>
-                            <%= check_box_tag :select1,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select1, true, false, {} %>
                             <%= label_tag :select1, "帳票管理が面倒くさい" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select2,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select2, true, false, {} %>
                             <%= label_tag :select2, "業務が止まってしまう" %>
                         </div>
-
                         <div>
-                            <%= check_box_tag :select3,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select3, true, false, {} %>
                             <%= label_tag :select3, "何から始めていいかわからない" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select4,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select4, true, false, {} %>
                             <%= label_tag :select4, "導入コストが高い" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select5,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select5, true, false, {} %>
                             <%= label_tag :select5, "専門知識を持っていない" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select6,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select6, true, false, {} %>
                             <%= label_tag :select6, "業界団体の手引書がまだ発行されていないので、対応方法がわからない" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select7,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select7, true, false, {} %>
                             <%= label_tag :select7, "自社内でだれが担当すればいいかがわからない" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select8,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select8, true, false, {} %>
                             <%= label_tag :select8, "社内に導入に反発する人が多い" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select9,1,{:checked => "checked"} %>
+                            <%= check_box_tag :select9, true, false, {} %>
                             <%= label_tag :select9, "ISOやFSSC、JFSなどの規格認証を取得するかどうか悩んでいる" %>
                         </div>
                         <div>
-                            <%= check_box_tag :select7,1,{:checked => "checked"} %>
-                            <%= label_tag :select7, "自社内でだれが担当すればいいかがわからない" %>
+                            <%= check_box_tag :select10, true, false, {} %>
+                            <%= label_tag :select10, "自社内でだれが担当すればいいかがわからない" %>
                         </div>
                         <div>
                             <label>その他にあればご記入ください<br>
-                                <%= f.text_field :name, class: "name" %>
+                                <%= f.text_area :other, class: "other" %>
                             </label>
                         </div>
                     </div>
                 </div>
-            <%= f.submit "登録内容を確認" %>
+            <div class="submit-button-area">
+                <div>
+                    <%= f.submit "申し込み登録", class: "submit-button" %>
+                </div>
+            </div>
         <% end %>
     </div>
 </div>
