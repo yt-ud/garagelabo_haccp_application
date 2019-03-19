@@ -1,0 +1,205 @@
+<div class="h1-title-wrapper">
+    <div class="h1-title-area">
+        <h1 class="h1-title"><span class="h1-title-white">HACCP参加登録フォーム</span></h1>
+    </div>
+</div>
+<!-- 処理段階 -->
+<div class="step-wrapper">
+    <div class="step-area">
+        <div class="step1">
+            <p><span>入力</span></p>
+        </div>
+        <div class="step2">
+            <p><span>内容確認</span></p>
+        </div>
+        <div class="step3">
+            <p><span>受付完了</span></p>
+        </div>
+    </div>
+</div>
+<!-- 登録フォーム -->
+<div class="content-wrapper">
+    <div class="content-area">
+        <%= form_with  do |f| %>
+            <div>
+                <h2 class="item">ご希望の日程をお選びください。</h2>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>イベント日程</span>
+                    </div>
+                    <div class="form-box-item">
+                        <label>
+                            <%= f.radio_button :date, "日程1" %>日程１
+                        </label>
+                        <label>
+                            <%= f.radio_button :date, "日程2" %>日程２
+                        </label>
+                        <label>
+                            <%= f.radio_button :date, "日程3" %>日程３
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="item">ご参加いただく方の情報をご入力ください。</h2>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>お名前</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>ふりがな</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>所属会社名</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>所属先住所</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>電話番号</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>FAX番号</span>
+                    </div>
+                    <div class="form-box-item">
+                        <br>
+                        <%= f.text_field :name, class: "name" %>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="item">HACCPについての質問にご回答ください。</h2>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>現在のHACCPの導入状況</span>
+                    </div>
+                    <div class="form-box-item">
+                        <label>
+                            <%= f.radio_button :implementation, "導入1" %>すでに導入している
+                        </label>
+                        <label>
+                            <%= f.radio_button :implementation, "導入2" %>導入を検討している
+                        </label>
+                        <label>
+                            <%= f.radio_button :implementation, "導入3" %>全く導入していない
+                        </label>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <div class="form-box-title">
+                        <span>HACCP導入に向けて不安に思っている点（複数回答可）</span>
+                    </div>
+                    <div class="form-box-item">
+                        <div>
+                            <%= check_box_tag :select1,1,{:checked => "checked"} %>
+                            <%= label_tag :select1, "帳票管理が面倒くさい" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select2,1,{:checked => "checked"} %>
+                            <%= label_tag :select2, "業務が止まってしまう" %>
+                        </div>
+
+                        <div>
+                            <%= check_box_tag :select3,1,{:checked => "checked"} %>
+                            <%= label_tag :select3, "何から始めていいかわからない" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select4,1,{:checked => "checked"} %>
+                            <%= label_tag :select4, "導入コストが高い" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select5,1,{:checked => "checked"} %>
+                            <%= label_tag :select5, "専門知識を持っていない" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select6,1,{:checked => "checked"} %>
+                            <%= label_tag :select6, "業界団体の手引書がまだ発行されていないので、対応方法がわからない" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select7,1,{:checked => "checked"} %>
+                            <%= label_tag :select7, "自社内でだれが担当すればいいかがわからない" %>
+                        </div>
+
+
+                        <div>
+                            <%= check_box_tag :select8,1,{:checked => "checked"} %>
+                            <%= label_tag :select8, "社内に導入に反発する人が多い" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select9,1,{:checked => "checked"} %>
+                            <%= label_tag :select9, "ISOやFSSC、JFSなどの規格認証を取得するかどうか悩んでいる" %>
+                        </div>
+                        <div>
+                            <%= check_box_tag :select7,1,{:checked => "checked"} %>
+                            <%= label_tag :select7, "自社内でだれが担当すればいいかがわからない" %>
+                        </div>
+                        <div>
+                            <label>その他にあればご記入ください<br>
+                                <%= f.text_field :name, class: "name" %>
+                            </label>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+   
+
+
+
+
+
+
+
+            <%= f.submit "登録内容を確認" %>
+        <% end %>
+    </div>
+</div>
+
+
+
+
+
