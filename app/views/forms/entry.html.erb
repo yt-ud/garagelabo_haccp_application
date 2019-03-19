@@ -20,8 +20,9 @@
 <!-- 登録フォーム -->
 <div class="content-wrapper">
     <div class="content-area">
-        <%= form_with  do |f| %>
+        <%= form_with url: posts_path do |f| %>
             <div>
+                <!-- 希望日程 -->
                 <h2 class="item">ご希望の日程をお選びください。</h2>
                 <div class="form-box">
                     <div class="form-box-title">
@@ -41,6 +42,7 @@
                 </div>
             </div>
             <div>
+                <!-- 参加者情報 -->
                 <h2 class="item">ご参加いただく方の情報をご入力ください。</h2>
                 <div class="form-box">
                     <div class="form-box-title">
@@ -48,7 +50,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :namekannji, class: "name"%>
                         <br>
                     </div>
                 </div>
@@ -58,7 +60,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :namefurigana, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -68,7 +70,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :namecompany, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -78,7 +80,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :addresscompany, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :phonenumber, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -98,12 +100,13 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :name, class: "name" %>
+                        <%= f.text_field :faxnumber, class: "name" %>
                         <br>
                     </div>
                 </div>
             </div>
             <div>
+                <!-- HACCPについて -->
                 <h2 class="item">HACCPについての質問にご回答ください。</h2>
                 <div class="form-box">
                     <div class="form-box-title">
@@ -111,13 +114,13 @@
                     </div>
                     <div class="form-box-item">
                         <label>
-                            <%= f.radio_button :implementation, "導入1" %>すでに導入している
+                            <%= f.radio_button :haccp, "すでに導入している" %>すでに導入している
                         </label>
                         <label>
-                            <%= f.radio_button :implementation, "導入2" %>導入を検討している
+                            <%= f.radio_button :haccp, "導入を検討している" %>導入を検討している
                         </label>
                         <label>
-                            <%= f.radio_button :implementation, "導入3" %>全く導入していない
+                            <%= f.radio_button :haccp, "全く導入していない" %>全く導入していない
                         </label>
                     </div>
                 </div>
@@ -155,8 +158,6 @@
                             <%= check_box_tag :select7,1,{:checked => "checked"} %>
                             <%= label_tag :select7, "自社内でだれが担当すればいいかがわからない" %>
                         </div>
-
-
                         <div>
                             <%= check_box_tag :select8,1,{:checked => "checked"} %>
                             <%= label_tag :select8, "社内に導入に反発する人が多い" %>
@@ -174,32 +175,9 @@
                                 <%= f.text_field :name, class: "name" %>
                             </label>
                         </div>
-
-
-
                     </div>
-
-
                 </div>
-
-
-
-
-
-   
-
-
-
-
-
-
-
             <%= f.submit "登録内容を確認" %>
         <% end %>
     </div>
 </div>
-
-
-
-
-

@@ -4,9 +4,7 @@ class FormsController < ApplicationController
   end
 
   def post
-  end
-
-  def confirm
+        
   end
 
 end
