@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-box-item">
                         <label>
-                            <%= f.radio_button :date, "日程1" %>日程１
+                            <%= f.radio_button :date, "日程1", {:checked=>true} %>日程１
                         </label>
                         <label>
                             <%= f.radio_button :date, "日程2" %>日程２
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :namekannji, class: "name"%>
+                        <%= f.text_field :namekannji, required: true ,class: "name"%>
                         <br>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :namefurigana, class: "name" %>
+                        <%= f.text_field :namefurigana, required: true, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :namecompany, class: "name" %>
+                        <%= f.text_field :namecompany, required: true, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :addresscompany, class: "name" %>
+                        <%= f.text_field :addresscompany, required: true, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :phonenumber, class: "name" %>
+                        <%= f.text_field :phonenumber, required: true, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="form-box-item">
                         <br>
-                        <%= f.text_field :faxnumber, class: "name" %>
+                        <%= f.text_field :faxnumber, required: true, class: "name" %>
                         <br>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="form-box-item">
                         <label>
-                            <%= f.radio_button :haccp1, "すでに導入している" %>すでに導入している
+                            <%= f.radio_button :haccp1, "すでに導入している", {:checked => true} %>すでに導入している
                         </label>
                         <label>
                             <%= f.radio_button :haccp1, "導入を検討している" %>導入を検討している
