@@ -16,6 +16,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # kintone
 gem 'kintone'
+# bootstrap
+gem 'bootstrap', '~> 4.2'
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

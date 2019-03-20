@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
 
  .footer {
     width: 100%;
@@ -28,4 +30,5 @@
  }
  .footer > p {
      margin: auto;
+     font-style: oblique;
  }
