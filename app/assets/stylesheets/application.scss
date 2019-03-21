@@ -19,16 +19,23 @@
  .footer {
     width: 100%;
     height: 60px;
+    margin-top: 60px; 
     color: white;
     background-color: blue;
     text-align: center;
-    vertical-align: center;
+    vertical-align: bottom;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
  }
  .footer > p {
      margin: auto;
      font-style: oblique;
  }
+ .process {
+    text-align: center;
+ }
+ 

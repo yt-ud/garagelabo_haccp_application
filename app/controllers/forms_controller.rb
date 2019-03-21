@@ -4,11 +4,8 @@ class FormsController < ApplicationController
   def entry
   end
 
-  def post
-    api = Kintone::Api.new("garagelabo.cybozu.com", "WaPombVC4MyXbfJo1OQ1WUlPYcEvSbobIZviXONp")
-    app = 39
-
-    checkboxes = {
+  def confirm
+    @checkboxes = {
       "select1" => "・帳票管理が面倒くさい。\n",
       "select2" => "・業務が止まってしまう。\n",
       "select3" => "・何から始めていいかわからない。\n",
@@ -20,15 +17,33 @@ class FormsController < ApplicationController
       "select9" => "・ISOやFSSC、JFSなどの規格認証を取得するかどうか悩んでいる。\n",
       "select10" => "・自社内でだれが担当すればいいかがわからない。\n"
     }
-
     haccp2 = ""
-    checkboxes.each { |key, value|
+    @checkboxes.each { |key, value|
       if params[:"#{key}"]
         haccp2 += value
       end
     }
+    @post = {
+     "date" => params[:date],
+     "namekannji" => params[:namekannji],
+     "namefurigana" => params[:namefurigana],
+     "namecompany" => params[:namecompany],
+     "addresscompany" => params[:addresscompany],
+     "phonenumber" => params[:phonenumber],
+     "email" => params[:email],
+     "faxnumber" => params[:faxnumber],
+     "haccp1" => params[:haccp1],
+     "haccp2" => haccp2,
+     "other" => params[:other],
+     "haccp3" => params[:haccp3]
+   }
+  end
 
-    record = {
+  def create
+    if params[:back].present?
+      redirect_to "/entry"
+    else
+      @record = {
       "date" => {"value" => params[:date]},
       "namekannji" => {"value" => params[:namekannji]},
       "namefurigana" => {"value" => params[:namefurigana]},
@@ -37,11 +52,14 @@ class FormsController < ApplicationController
       "phonenumber" => {"value" => params[:phonenumber]},
       "faxnumber" => {"value" => params[:faxnumber]},
       "haccp1" => {"value" => params[:haccp1]},
-      "haccp2" => {"value" => haccp2},
+      "haccp2" => {"value" => params[:haccp2]},
       "other" =>  {"value" => params[:other]},
       "haccp3" => {"value" => params[:haccp3]}
-    }
-    api.record.register(app, record)
+      }
+      api = Kintone::Api.new("garagelabo.cybozu.com", "WaPombVC4MyXbfJo1OQ1WUlPYcEvSbobIZviXONp")
+      app = 39
+      api.record.register(app, @record)
+    end
   end
 
 end

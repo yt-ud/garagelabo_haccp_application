@@ -1,0 +1,120 @@
+<div class="h1-title-wrapper">
+    <div class="h1-title-area">
+        <h1 class="h1-title"><span class="h1-title-white">HACCP参加登録フォーム</span></h1>
+    </div>
+</div>
+
+<!-- 処理段階 -->
+<h3 class="process">お申し込み内容の確認</h3>
+
+<!-- 登録フォーム -->
+<div class="container">
+    <!-- 希望日程 -->
+    <h4 class="item">ご希望の日程</h4>
+    <div class="row align-items-center">
+        <div class="col-md-6 title-top"><span>イベント日程</span></div>
+        <div class="col-md-6 form-top">
+            <div class="info">
+                <%= @post["date"] %>
+            </div>
+        </div>
+    </div>
+    <!-- 参加者情報 -->
+    <h4 class="item">ご参加者の情報</h4>
+    <div class="row align-items-center">
+        <div class="col-md-6 title-top">名前</div>
+        <div class="col-md-6 form-top">
+            <div class="info">
+                <span>氏名：</span>
+                <%= @post["namekannji"] %>
+            </div>
+            <div class="info">
+                <span>ふりがな：</span>
+                <%= @post["namefurigana"] %>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6 title"><span>所属</span></div>
+        <div class="col-md-6 form">
+            <div class="info">
+                <span>企業名：</span>
+                <%= @post["namecompany"] %>
+            </div>
+            <div class="info">
+                <span>住所：</span>
+                <%= @post["addresscompany"] %>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6 title"><span>連絡先</span></div>
+        <div class="col-md-6 form">
+            <div class="info">
+                <span>電話番号：</span>
+                <%= @post["phonenumber"] %>
+            </div>
+            <div class="info">
+                <span>メールアドレス：</span>
+                <%= @post["email"] %>
+            </div>
+            <div>
+                <span>FAX番号：</span>
+                <% if @post["faxnumber"].present? %>
+                    <%= @post["faxnumber"] %>
+                <% else %>
+                    <%= "未記入" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <!-- HACCPについて -->
+    <h4 class="item">HACCPについての質問にご回答ください。</h4>
+    <div class="row align-items-center">
+        <div class="col-md-6 title-top"><span>現在のHACCPの導入状況</span></div>
+        <div class="col-md-6 form-top">
+            <div class="info">
+                <%= @post["haccp1"] %>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6 title"><span>HACCP導入に向けて不安に思っている点</span></div>
+        <div class="col-md-6 form">
+            <div class="info">
+                <% if @post["haccp2"].present? %>
+                    <%= @post["haccp2"] %>
+                <% else %>
+                    <%= "チェック項目の選択なし" %>
+                <% end %>
+            </div>
+            <div class="info">
+                <span>その他：</span>
+                <% if @post["other"].present? %>
+                    <%= @post["other"] %>
+                <% else %>
+                    <%= "未記入" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6 title"><span>HACCPに関する具体的な悩みや相談事</span></div>
+        <div class="col-md-6 form">
+            <div class="info">
+                <% if @post["haccp3"].present? %>
+                    <%= @post["haccp3"] %>
+                <% else %>
+                    <%= "未記入" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center submit-button-area">
+    <div class="col-md-6">
+        <%= button_to "登録する", {action: "create"}, {class: "submit-button btn-primary rounded-pill", params: @post} %>
+    </div>
+    <div class="col-md-6">
+        <%= button_to "入力に戻る", {action: "create"}, {class: "submit-button btn-primary rounded-pill", name: "back", params: @post} %>
+    </div>
+

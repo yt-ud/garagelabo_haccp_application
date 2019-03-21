@@ -4,11 +4,14 @@
     </div>
 </div>
 
+<!-- 処理段階 -->
+<h3 class="process" >お申し込み</h3>
+
 <!-- 登録フォーム -->
 <div class="container">
-    <%= form_with url: posts_path do |f| %>
+    <%= form_with url: confirms_path, method: :get, local: :true do |f| %>
         <!-- 希望日程 -->
-        <h4 class="item">ご希望の日程をお選びください</span></h2>
+        <h4 class="item">ご希望の日程をお選びください</h4>
         <div class="row align-items-center">
             <div class="col-md-6 title-top"><span>イベント日程</span></div>
             <div class="col-md-6 form-top">
@@ -18,7 +21,7 @@
             </div>
         </div>
         <!-- 参加者情報 -->
-        <h4 class="item">ご参加いただく方の情報をご入力ください</span></h2>
+        <h4 class="item">ご参加いただく方の情報をご入力ください</h4>
         <div class="row align-items-center">
             <div class="col-md-6 title-top">名前</div>
             <div class="col-md-6 form-top">
@@ -63,7 +66,7 @@
             </div>
         </div>
         <!-- HACCPについて -->
-        <h4 class="item">HACCPについての質問にご回答ください。</h2>
+        <h4 class="item">HACCPについての質問にご回答ください。</h4>
         <div class="row align-items-center">
             <div class="col-md-6 title-top"><span>現在のHACCPの導入状況</span></div>
             <div class="col-md-6 form-top">
@@ -134,7 +137,7 @@
             </div>
         </div>
         <div class="row align-items-center submit-button-area">
-            <%= f.submit "申し込み", class: "submit-button btn-primary rounded-pill" %>
+            <%= f.submit "確認画面へ", class: "submit-button btn-primary rounded-pill" %>
         </div>
     <% end %>
 </div>
