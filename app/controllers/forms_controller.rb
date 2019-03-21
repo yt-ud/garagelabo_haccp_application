@@ -50,6 +50,7 @@ class FormsController < ApplicationController
       "namecompany" => {"value" => params[:namecompany]},
       "addresscompany" => {"value" => params[:addresscompany]},
       "phonenumber" => {"value" => params[:phonenumber]},
+      "email" => {"value" => params[:email]},
       "faxnumber" => {"value" => params[:faxnumber]},
       "haccp1" => {"value" => params[:haccp1]},
       "haccp2" => {"value" => params[:haccp2]},
