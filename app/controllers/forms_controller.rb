@@ -58,7 +58,7 @@ class FormsController < ApplicationController
       "haccp3" => {"value" => params[:haccp3]}
       }
       api = Kintone::Api.new("garagelabo.cybozu.com", "wYQmJdGHEOODJWmlWWMqY8bdkvQMpU0Y5ZUrf7kf")
-      app = 39
+      app = 40
       api.record.register(app, @record)
     end
   end
